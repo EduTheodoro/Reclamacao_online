@@ -19,28 +19,5 @@
 				});
 			}
 		});
-	});
-//	var populaTabela = $(function() {
-//		$.post('/reclamacao/reclamacoes')
-//		.done(function(dados) {
-//			$('#tabelaReclamacao').empty();
-//			var linhas = [];
-//			for(var i=0;dados.length>i;i++){
-//				
-//				var linhaData = [
-//				                 '<tr><td>' + dados[i].id + 
-//				                 '</td><td><fmt:formatDate value="' + dados[i].data + '" pattern="dd/MM/yyyy" />' + 
-//				                 '</td><td>' + dados[i].unidade + 
-//				                 '</td><td>' + dados[i].setor + 
-//				                 '</td><td>' + dados[i].tipoReclamacao + 
-//				                 '</td><td>' + dados[i].descricao + 
-//				                 '</td><td><span>' + "Remover" + '</span></td></tr>'
-//				                 ];
-//				linhas.push(linhaData);
-//			}
-//			$('#tabelaReclamacao tbody').append(linhas).trigger('footable_redraw');;
-//		}).fail(function(){
-//			alert("Não populou a tabela")
-//		});
-//	});	
+	});	
 })(jQuery);
