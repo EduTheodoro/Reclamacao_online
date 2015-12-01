@@ -1,1 +1,6 @@
 /target/
+.settings
+.project
+.classpath
+.tern-project
+build.properties
