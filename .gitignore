@@ -1,6 +1,10 @@
 /target/
+<<<<<<< HEAD
 .settings
 .project
 .classpath
 .tern-project
 build.properties
+=======
+/bin/
+>>>>>>> a0eeda8
