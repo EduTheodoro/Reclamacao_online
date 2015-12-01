@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: reclamacao-online
+Bundle-SymbolicName: reclamacao-online
+Bundle-Version: 1.0.0.qualifier
+Export-Package: br.com.preventsenior.reclamacao.annotation,
+ br.com.preventsenior.reclamacao.controller,
+ br.com.preventsenior.reclamacao.dao,
+ br.com.preventsenior.reclamacao.interceptor,
+ br.com.preventsenior.reclamacao.model,
+ br.com.preventsenior.reclamacao.util,
+ br.com.preventsenior.reclamacao.vo
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+      http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0">
+	
+	<persistence-unit name="reclamacaopu" transaction-type="JTA">
+		<jta-data-source>java:jboss/datasources/ReclamacoesDS</jta-data-source>
+		<class>br.com.preventsenior.reclamacao.model.PerfilAcesso</class>
+		<class>br.com.preventsenior.reclamacao.model.Reclamacao</class>
+		<class>br.com.preventsenior.reclamacao.model.Setor</class>
+		<class>br.com.preventsenior.reclamacao.model.TipoReclamacao</class>
+		<class>br.com.preventsenior.reclamacao.model.Unidade</class>
+		<class>br.com.preventsenior.reclamacao.model.Usuario</class>
+		<properties>
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+		</properties>
+	</persistence-unit>
+	
+	
+</persistence>
