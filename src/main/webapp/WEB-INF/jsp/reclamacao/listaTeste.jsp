@@ -71,7 +71,7 @@
 								<c:forEach items="${reclamacaoList}" var="reclamacao">
 									<tr class="item-table-action" id="${reclamacao.id}">
 										<td>${reclamacao.id}</td>
-										<td><fmt:formatDate value="${reclamacao.date}" pattern="dd/MM/yyyy" /></td>
+										<td>${reclamacao.dataFormatada}</td>
 										<td>${reclamacao.unidade}</td>
 										<td>${reclamacao.setor}</td>
 										<td>${reclamacao.tipoReclamacao}</td>

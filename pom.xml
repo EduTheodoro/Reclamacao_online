@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>br.com.preventsenior</groupId>
-	<artifactId>reclamacao-oline</artifactId>
+	<artifactId>Reclamacao_oline</artifactId>
 	<version>1.0.0</version>
 	<packaging>war</packaging>
 
-	<name>reclamacao-oline</name>
+	<name>Reclamacao_oline</name>
 	<description>ReclamacaoOnline VRaptor4</description>
 
 	<dependencyManagement>

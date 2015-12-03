@@ -1,11 +1,14 @@
 package br.com.preventsenior.reclamacao.vo;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class ReclamacaoDTO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+	
+	private static final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
 	private int id;
 	private Date date;
@@ -59,6 +62,10 @@ public class ReclamacaoDTO implements Serializable {
 	}
 	public void setUnidade(String unidade) {
 		this.unidade = unidade;
+	}
+	
+	public String getDataFormatada() {
+		return sdf.format(date);
 	}
 	
 	

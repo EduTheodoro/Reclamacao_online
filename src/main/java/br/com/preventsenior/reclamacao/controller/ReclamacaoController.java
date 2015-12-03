@@ -64,14 +64,15 @@ public class ReclamacaoController {
 		result.include("reclamacaoList", dao.lista());
 	}
 	
-	@Post("/reclamacoes")
+	@Get("/reclamacoes")
 	public void listaJson() {
 		List<ReclamacaoDTO> reclamacoes = dao.lista();
 		result.use(Results.json()).from(reclamacoes).serialize();
 	}
 		
 	@Post("/adiciona")
-	@Transactional public void adiciona(Reclamacao reclamacao) throws DAOException {
+	@Transactional 
+	public void adiciona(Reclamacao reclamacao) throws DAOException {
 		try {
 			dao.adiciona(reclamacao);
 			result.redirectTo(this).formulario();
@@ -88,7 +89,8 @@ public class ReclamacaoController {
 	}
 	
 	@Post("/remove")
-	@Transactional public void remove(Integer id) {
+	@Transactional 
+	public void remove(Integer id) {
 		Reclamacao reclamacao = dao.busca(id);
 		dao.remove(reclamacao);
 		result.nothing();

@@ -15,7 +15,7 @@
 						footable.removeRow(linha);
 					});
 				}).fail(function() {
-					alert("Não deu...");
+					alert("Problemas ao Remover Item.");
 				});
 			}
 		});
