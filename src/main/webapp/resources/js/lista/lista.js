@@ -19,5 +19,13 @@
 				});
 			}
 		});
+		var populaTabela = $(function() {
+			$.post('/reclamacao/reclamacoes')
+			.done(function(dados) {
+				$('table tbody').append(dados).trigger('footable_redraw');
+			}).fail(function(){
+				alert("Não populou a tabela")
+			});
+		});
 	});	
 })(jQuery);

@@ -61,7 +61,7 @@ public class ReclamacaoController {
 	
 	@Get("/listaTeste")
 	public void listaTeste() {
-		result.include("reclamacaoList", dao.lista());
+//		result.include("reclamacaoList", dao.lista());
 	}
 	
 	@Get("/reclamacoes")
