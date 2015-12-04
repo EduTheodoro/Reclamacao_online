@@ -12,7 +12,7 @@
 			var footable = $('table').data('footable');
 			
 			if (confirm("Deseja apagar a Reclamação: " + idReclamacao + " ?")) {
-				$.post($.paramsPage.contexto + '/remove', { id : idReclamacao }).done(function(data) {
+				$.post($.paramsPage.contexto +  '/remove', { id : idReclamacao }).done(function(data) {
 					linha.hide("slow", function() {
 						linha.remove();
 						footable.removeRow(linha);
