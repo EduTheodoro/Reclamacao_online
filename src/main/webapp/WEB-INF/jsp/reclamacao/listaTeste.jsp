@@ -68,10 +68,10 @@
 								</tr>
 							</tfoot>
 							<tbody id="tabelaReclamacao">
-								<%-- <c:forEach items="${reclamacaoList}" var="reclamacao">
+								<c:forEach items="${reclamacaoList}" var="reclamacao">
 									<tr class="item-table-action" id="${reclamacao.id}">
 										<td>${reclamacao.id}</td>
-										<td>{reclamacao.date}</td>
+										<td>${reclamacao.dataFormatada}</td>
 										<td>${reclamacao.unidade}</td>
 										<td>${reclamacao.setor}</td>
 										<td>${reclamacao.tipoReclamacao}</td>
@@ -82,7 +82,7 @@
 											<span>Remover</span>
 										</td>
 									</tr>
-								</c:forEach> --%>
+								</c:forEach>
 							</tbody>
 						</table><br>
 					</div>
