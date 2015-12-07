@@ -1,7 +1,9 @@
+--Table Perfil
 DROP TABLE reclamacoes.perfil_acesso;
 CREATE TABLE reclamacoes.perfil_acesso (ID int NOT NULL AUTO_INCREMENT, PERFIL_DESCRICAO varchar(255), PERFIL_NOME varchar(100), PRIMARY KEY (ID)) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 INSERT INTO reclamacoes.perfil_acesso (ID, PERFIL_DESCRICAO, PERFIL_NOME) VALUES (1, 'Administrador', 'ADMINISTRADOR');
 INSERT INTO reclamacoes.perfil_acesso (ID, PERFIL_DESCRICAO, PERFIL_NOME) VALUES (2, 'Colaborador', 'COLABORADOR');
+--Table Reclamacao
 DROP TABLE reclamacoes.reclamacao;
 CREATE TABLE reclamacoes.reclamacao (ID int NOT NULL AUTO_INCREMENT, DATA date, ID_SETOR int, ID_TIPO_RECLAMACAO int, ID_UNIDADE int, DESCRICAO longtext, IC_ATIVO bit, PRIMARY KEY (ID), INDEX FK_ID_SETOR (ID_SETOR), INDEX FK_ID_TIPO_RECLAMACAO (ID_TIPO_RECLAMACAO), INDEX FK_ID_UNIDADE (ID_UNIDADE)) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 INSERT INTO reclamacoes.reclamacao (ID, DATA, ID_SETOR, ID_TIPO_RECLAMACAO, ID_UNIDADE, DESCRICAO, IC_ATIVO) VALUES (2, '2015-10-23', 25, 2, 3, 'Testete de campo', false);
@@ -21,6 +23,7 @@ INSERT INTO reclamacoes.reclamacao (ID, DATA, ID_SETOR, ID_TIPO_RECLAMACAO, ID_U
 INSERT INTO reclamacoes.reclamacao (ID, DATA, ID_SETOR, ID_TIPO_RECLAMACAO, ID_UNIDADE, DESCRICAO, IC_ATIVO) VALUES (16, '2015-11-23', 19, 3, 3, 'MAIS UM TESTE', true);
 INSERT INTO reclamacoes.reclamacao (ID, DATA, ID_SETOR, ID_TIPO_RECLAMACAO, ID_UNIDADE, DESCRICAO, IC_ATIVO) VALUES (17, '2015-11-23', 19, 4, 2, 'MAIS UM TESTE', true);
 INSERT INTO reclamacoes.reclamacao (ID, DATA, ID_SETOR, ID_TIPO_RECLAMACAO, ID_UNIDADE, DESCRICAO, IC_ATIVO) VALUES (18, '2015-11-23', 26, 2, 2, 'MAIS UM TESTE', false);
+--Table Setores
 DROP TABLE reclamacoes.setores;
 CREATE TABLE reclamacoes.setores (ID int NOT NULL AUTO_INCREMENT, SETOR_DESCRICAO varchar(255), SETOR_NOME varchar(100), IC_ATIVO bit, PRIMARY KEY (ID)) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 INSERT INTO reclamacoes.setores (ID, SETOR_DESCRICAO, SETOR_NOME, IC_ATIVO) VALUES (1, 'Recepção', 'RECEPCAO', true);
@@ -41,6 +44,7 @@ INSERT INTO reclamacoes.setores (ID, SETOR_DESCRICAO, SETOR_NOME, IC_ATIVO) VALU
 INSERT INTO reclamacoes.setores (ID, SETOR_DESCRICAO, SETOR_NOME, IC_ATIVO) VALUES (31, 'Financeiro', 'FINANCEIRO', true);
 INSERT INTO reclamacoes.setores (ID, SETOR_DESCRICAO, SETOR_NOME, IC_ATIVO) VALUES (32, 'Contabilidade', 'CONTABILIDADE', true);
 INSERT INTO reclamacoes.setores (ID, SETOR_DESCRICAO, SETOR_NOME, IC_ATIVO) VALUES (33, 'Diretoria', 'DIRETORIA', true);
+--Table Tipo_Reclamao
 DROP TABLE reclamacoes.tipo_reclamacao;
 CREATE TABLE reclamacoes.tipo_reclamacao (ID int NOT NULL AUTO_INCREMENT, TIPO_DESCRICAO varchar(255), TIPO_NOME varchar(100), IC_ATIVO bit, PRIMARY KEY (ID)) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 INSERT INTO reclamacoes.tipo_reclamacao (ID, TIPO_DESCRICAO, TIPO_NOME, IC_ATIVO) VALUES (1, 'Conduta Profissional', 'CONDUTA_PROFISSIONAL', true);
@@ -48,6 +52,7 @@ INSERT INTO reclamacoes.tipo_reclamacao (ID, TIPO_DESCRICAO, TIPO_NOME, IC_ATIVO
 INSERT INTO reclamacoes.tipo_reclamacao (ID, TIPO_DESCRICAO, TIPO_NOME, IC_ATIVO) VALUES (3, 'Falta de Reconhecimento', 'FALRA_RECONHECIMENTO', true);
 INSERT INTO reclamacoes.tipo_reclamacao (ID, TIPO_DESCRICAO, TIPO_NOME, IC_ATIVO) VALUES (4, 'Condições de Trabalho', 'CONDICOES_TRABALHO', true);
 INSERT INTO reclamacoes.tipo_reclamacao (ID, TIPO_DESCRICAO, TIPO_NOME, IC_ATIVO) VALUES (5, 'Infraestrutura', 'INFRA', true);
+--Table Unidades
 DROP TABLE reclamacoes.unidades;
 CREATE TABLE reclamacoes.unidades (ID int NOT NULL AUTO_INCREMENT, UNIDADE_DESCRICAO varchar(255), UNIDADE_NOME varchar(100), IC_ATIVO bit, PRIMARY KEY (ID)) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 INSERT INTO reclamacoes.unidades (ID, UNIDADE_DESCRICAO, UNIDADE_NOME, IC_ATIVO) VALUES (1, 'Vila Olimpia', 'VILA_OLIMPIA', true);
@@ -56,12 +61,15 @@ INSERT INTO reclamacoes.unidades (ID, UNIDADE_DESCRICAO, UNIDADE_NOME, IC_ATIVO)
 INSERT INTO reclamacoes.unidades (ID, UNIDADE_DESCRICAO, UNIDADE_NOME, IC_ATIVO) VALUES (4, 'Ibirapuera', 'IBIRAPUERA', true);
 INSERT INTO reclamacoes.unidades (ID, UNIDADE_DESCRICAO, UNIDADE_NOME, IC_ATIVO) VALUES (5, 'Vergueiro', 'VERGUEIRO', true);
 INSERT INTO reclamacoes.unidades (ID, UNIDADE_DESCRICAO, UNIDADE_NOME, IC_ATIVO) VALUES (6, 'Santo André', 'SANTO_ANDRE', true);
+--Table Usuario
 DROP TABLE reclamacoes.usuarios;
 CREATE TABLE reclamacoes.usuarios (ID int NOT NULL AUTO_INCREMENT, EMAIL varchar(100), LOGIN_USUARIO varchar(50), NOME_USUARIO varchar(255), RAMAL int NOT NULL, SENHA varchar(50), ID_PERFIL_ACESSO int, ID_SETOR int, ID_UNIDADE int, IC_ATIVO bit, PRIMARY KEY (ID), INDEX FK_ID_PERFIL_ACESSO_USUARIO (ID_PERFIL_ACESSO), INDEX FK_ID_SETOR_USUARIO (ID_SETOR), INDEX FK_ID_UNIDADE_USUARIO (ID_UNIDADE)) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 INSERT INTO reclamacoes.usuarios (ID, EMAIL, LOGIN_USUARIO, NOME_USUARIO, RAMAL, SENHA, ID_PERFIL_ACESSO, ID_SETOR, ID_UNIDADE, IC_ATIVO) VALUES (1, 'eduardo.theodoro@preventsenior.com.br', 'eduardo.theodoro', 'Eduardo Theodoro da Silva Filho', 1010, '12345', 1, 24, 1, true);
+
 ALTER TABLE reclamacoes.reclamacao ADD CONSTRAINT FK_ID_SETOR FOREIGN KEY (ID_SETOR) REFERENCES reclamacoes.setores (ID) ;
 ALTER TABLE reclamacoes.reclamacao ADD CONSTRAINT FK_ID_TIPO_RECLAMACAO FOREIGN KEY (ID_TIPO_RECLAMACAO) REFERENCES reclamacoes.tipo_reclamacao (ID) ;
 ALTER TABLE reclamacoes.reclamacao ADD CONSTRAINT FK_ID_UNIDADE FOREIGN KEY (ID_UNIDADE) REFERENCES reclamacoes.unidades (ID);
+
 ALTER TABLE reclamacoes.usuarios ADD CONSTRAINT FK_ID_PERFIL_ACESSO_USUARIO FOREIGN KEY (ID_PERFIL_ACESSO) REFERENCES reclamacoes.perfil_acesso (ID) ;
 ALTER TABLE reclamacoes.usuarios ADD CONSTRAINT FK_ID_SETOR_USUARIO FOREIGN KEY (ID_UNIDADE) REFERENCES reclamacoes.unidades (ID) ;
 ALTER TABLE reclamacoes.usuarios ADD CONSTRAINT FK_ID_UNIDADE_USUARIO FOREIGN KEY (ID_SETOR) REFERENCES reclamacoes.setores (ID);
