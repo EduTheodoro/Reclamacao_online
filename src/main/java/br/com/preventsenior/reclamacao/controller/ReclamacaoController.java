@@ -76,7 +76,6 @@ public class ReclamacaoController {
 		try {
 			dao.adiciona(reclamacao);
 			result.redirectTo(this).formulario();
-			result.include("mensagem", "Reclamação numero " + reclamacao.getId() + " foi adicionada com sucesso!");
 		} catch (DAOException cause) {
 			throw new DAOException("Erro ao Salvar", cause);
 		}
