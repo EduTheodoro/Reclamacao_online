@@ -68,6 +68,7 @@ public class ReclamacaoController {
 	public void listaJson() {
 		List<ReclamacaoDTO> reclamacoes = dao.lista();
 		result.use(Results.json()).from(reclamacoes).serialize();
+		//TODO Estudar retorno da lista para a JSP
 	}
 		
 	@Post("/adiciona")

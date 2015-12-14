@@ -22,5 +22,11 @@
 				});
 			}
 		});
+		
+		$('#atualizar').click(function() {
+			$.get($.paramsPage.contexto + '/reclamacoes').done(function(data) {
+				$('table tbody').append(data).trigger('footable_redraw');
+			});
+		});
 	});	
 })(jQuery);

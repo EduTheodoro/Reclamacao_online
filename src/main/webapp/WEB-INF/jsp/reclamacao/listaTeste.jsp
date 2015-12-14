@@ -46,6 +46,9 @@
 				<div class="form-column">
 					<div id="" class="form-field">
 						<div>
+							<input id="atualizar" type="button" class="btn-action olive search" value="Atualizar">
+						</div>
+						<div>
 							<br><input id="filter" type="text" class="default" placeholder="Pesquisar..."><br><br>
 						</div>
 						<table class="footable toggle-arrow-tiny metro-new" data-filter="#filter">
