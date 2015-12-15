@@ -67,7 +67,7 @@ public class ReclamacaoController {
 	@Get("/reclamacoes")
 	public void listaJson() {
 		List<ReclamacaoDTO> reclamacoes = dao.lista();
-		result.use(Results.json()).from(reclamacoes).serialize();
+		result.use(Results.json()).indented().from(reclamacoes).serialize();
 		//TODO Estudar retorno da lista para a JSP
 	}
 		
