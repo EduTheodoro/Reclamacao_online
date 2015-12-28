@@ -35,11 +35,11 @@
 						<div id="" class="form-column">
 							<div id="" class="form-field">
 								<label class="default obrigatorio">Usuario:</label> 
-								<input class="default obrigatorio" name="usuarioDto.loginUsuario" type="text" placeholder="Digite seu Usuario"><br />
+								<input class="default obrigatorio" name="usuario.loginUsuario" value="${usuario.loginUsuario}" type="text" placeholder="Digite seu Usuario"><br />
 							</div>
 							<div id="" class="form-field">
 								<label class="default obrigatorio">Senha:</label> 
-								<input class="default obrigatorio" name="usuarioDto.senha" type="password" placeholder="Digite sua Senha"><br />
+								<input class="default obrigatorio" name="usuario.senha" value="${usuario.senha}" type="password" placeholder="Digite sua Senha"><br />
 							</div>
 							<div id="" class="form-field">
 								<br>
@@ -50,13 +50,13 @@
 					</div>
 				</fieldset>
 			</section>
-			<section>
-				<div id="" class="form-container">
-					<fieldset id="" class="light-color extreme-light-ack set-pre">
-						<label class="default">${mensagem}</label>
-					</fieldset>
+			<c:if test="${not empty errors}">
+				<div class="alert alert-danger">
+					<c:forEach items="${errors}" var="erro">
+						${erro.category} - ${erro.message} <br/>
+					</c:forEach>
 				</div>
-			</section>
+			</c:if>
 		</div>
 	</form>
 </body>

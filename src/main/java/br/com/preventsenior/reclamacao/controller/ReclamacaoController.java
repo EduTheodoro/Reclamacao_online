@@ -10,6 +10,7 @@ import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.view.Results;
+import br.com.preventsenior.reclamacao.annotation.Public;
 import br.com.preventsenior.reclamacao.dao.ReclamacaoDAO;
 import br.com.preventsenior.reclamacao.dao.SetorDAO;
 import br.com.preventsenior.reclamacao.dao.TipoReclamacaoDAO;
@@ -39,12 +40,12 @@ public class ReclamacaoController {
 		result.include("listaUnidade", unidadeDao.lista());
 	}
 	
-	@Get("/erro")
+	@Get("/erro") @Public
 	public void erro() {
 		
 	}
 
-	@Get("/inicio")
+	@Get("/inicio") @Public
 	public void inicio() {
 		
 	}
@@ -72,7 +73,7 @@ public class ReclamacaoController {
 	}
 		
 	@Post("/adiciona")
-	@Transactional 
+	@Transactional @Public
 	public void adiciona(Reclamacao reclamacao) throws DAOException {
 		try {
 			dao.adiciona(reclamacao);
@@ -82,7 +83,7 @@ public class ReclamacaoController {
 		}
 	}
 		
-	@Get("/detalhes/{id}")
+	@Get("/detalhes/{id}") @Public
 	public void detalhes(Integer id) {
 		Reclamacao reclamacao = dao.busca(id);
 		result.include("reclamacao", reclamacao);

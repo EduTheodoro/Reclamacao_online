@@ -24,12 +24,12 @@ public class AutorizadorInterceptor {
 	
 	@Accepts
 	public boolean accepts() {
-		return controllerMethod.containsAnnotation(Public.class);
+		return !controllerMethod.containsAnnotation(Public.class);
 	}
 	
 	@AroundCall
 	public void interceota(SimpleInterceptorStack stack) {
-		if (usuarioLogado.getUsuarioDTO() == null) {
+		if (usuarioLogado.getUsuario() == null) {
 			result.redirectTo(LoginController.class).formulario();
 			return;
 		}

@@ -5,21 +5,21 @@ import java.io.Serializable;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
-import br.com.preventsenior.reclamacao.vo.UsuarioDTO;
+import br.com.preventsenior.reclamacao.model.Usuario;
 
 @SessionScoped
 @Named
-public class UsuarioLogado implements Serializable{
+public class UsuarioLogado implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private UsuarioDTO usuario;
+	private Usuario usuario;
 
-	public UsuarioDTO getUsuarioDTO() {
+	public Usuario getUsuario() {
 		return usuario;
 	}
 
-	public void setUsuarioDTO(UsuarioDTO usuario) {
+	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
 

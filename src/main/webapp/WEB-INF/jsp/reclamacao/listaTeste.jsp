@@ -31,7 +31,7 @@
 		<div class="desk-system-user-itens">
 			<div id="desk-user-info" class="desk-system-user-info desk-menu">
 				<div class="desk-user-name">
-					<%-- <span>${usuarioLogado.usuario.login}</span> --%>
+					<span>${usuarioLogado.usuario.loginUsuario}</span>
 				</div>
 			</div>
 		</div>

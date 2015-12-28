@@ -7,10 +7,12 @@ import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
+import br.com.caelum.vraptor.validator.I18nMessage;
+import br.com.caelum.vraptor.validator.Validator;
+import br.com.preventsenior.reclamacao.annotation.Public;
 import br.com.preventsenior.reclamacao.dao.SetorDAO;
 import br.com.preventsenior.reclamacao.dao.UsuarioDAO;
 import br.com.preventsenior.reclamacao.model.Usuario;
-import br.com.preventsenior.reclamacao.vo.UsuarioDTO;
 
 @Controller
 public class LoginController {
@@ -23,22 +25,24 @@ public class LoginController {
 	private UsuarioLogado usuarioLogado;
 	@Inject
 	private SetorDAO setorDao;
+	@Inject
+	private Validator validator;
 	
-	@Get("/login/formulario")
+	@Get("/login/formulario") @Public
 	public void formulario() {
 	}
 	
-	@Post("/login/autentica")
-	public void autentica(UsuarioDTO usuario) {
-		if (dao.busca(usuario) != null) {
-			result.include("mensagem", "Usuario ou senha invalida");
-			result.redirectTo(this).formulario();
+	@Post("/login/autentica") @Public
+	public void autentica(Usuario usuario) {
+		if (!dao.existe(usuario)) {
+			validator.add(new I18nMessage("login", "login.invalido"));
+			validator.onErrorRedirectTo(this).formulario();
 		}
-		usuarioLogado.setUsuarioDTO(usuario);
+		usuarioLogado.setUsuario(usuario);
 		result.redirectTo(ReclamacaoController.class).listaTeste();
 	}
 	
-	@Post("/login/adiciona")
+	@Post("/login/adiciona") 
 	@Transactional public void adiciona(Usuario usuario) {
 		dao.salva(usuario);
 		result.include("mensagem", "Usuario numero: " + usuario.getId() + " Adicionado com sucesso!");

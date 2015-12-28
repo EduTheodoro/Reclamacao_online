@@ -15,9 +15,10 @@ public class UsuarioDAO {
 	private EntityManager em;
 	
 	public boolean existe(Usuario usuario) {
-		return !em.createQuery("select u from Usuario u where u.loginUsuario = :nome and u.senha = :senha",
-				Usuario.class).setParameter("nome", usuario.getLoginUsuario())
-				.setParameter("senha", usuario.getSenha()).getResultList().isEmpty();
+		return !em.createQuery("select u from Usuario u where u.loginUsuario = :loginUsuario and u.senha = :senha", Usuario.class)
+			.setParameter("loginUsuario", usuario.getLoginUsuario())
+			.setParameter("senha", usuario.getSenha())
+			.getResultList().isEmpty();
 	}
 	
 	
