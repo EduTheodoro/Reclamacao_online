@@ -35,11 +35,22 @@
 			<fieldset id="" class="light-color extreme-light-ack set-pre">
 				<div class="form-column">
 					<div id="" class="form-field">
-						<div class="tableauPlaceholder" style="width: 100%; height: 90%; position: relative; overflow: hidden; display: block;">
-							<object class='tableauViz' width='100%' height='100%' style='display:none;'>
-								<param name='host_url' value='http://tableau.preventsenior.com.br/views/FastTrack/TempoMdiodeAtendimento?:embed=y&:display_count=no&:showShareOptions=true'/> 
+						<div class='tableauPlaceholder' style='width: 1907px; height: 913px;'>
+							<object class='tableauViz' width='1907' height='913' style='display:none;'>
+								<param name='host_url' value='http%3A%2F%2Ftableau.preventsenior.com.br%2F' /> 
+								<param name='site_root' value='' />
+								<param name='name' value='FastTrack&#47;QuantidadedeSenhasEmitidasporUnidade' />
+								<param name='tabs' value='no' />
+								<param name='toolbar' value='yes' />
+								<param name='showVizHome' value='n' />
+								<param name='bootstrapWhenNotified' value='y' />
+								<param name='filter' value='%3AopenAuthoringInTopWindow=true' />
+								<param name='filter' value='%3AbrowserBackButtonUndo=true' />
+								<param name='filter' value='%3AreloadOnCustomViewSave=true' />
+								<param name='filter' value='%3AshowShareOptions=true' />
 							</object>
 						</div>
+						
 					</div>
 				</div>
 			</fieldset>

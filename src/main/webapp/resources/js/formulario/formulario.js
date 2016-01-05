@@ -71,6 +71,6 @@ $(document).ready(function() {
 	});
 	/******** VISUALIZA LISTA *******/
 	$('#logar').click(function(){
-		$("#form-logar").attr("action", '/reclamacao/listaTeste').submit();
+		$("#form-logar").attr("action", 'http://tableau.preventsenior.com.br/views/FastTrack/TempoMdiodeAtendimento?:display_count=no&:original_view=yes&:showShareOptions=true').submit();
 	});
 });
