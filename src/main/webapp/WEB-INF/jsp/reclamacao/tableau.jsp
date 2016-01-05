@@ -50,7 +50,6 @@
 								<param name='filter' value='%3AshowShareOptions=true' />
 							</object>
 						</div>
-						
 					</div>
 				</div>
 			</fieldset>
